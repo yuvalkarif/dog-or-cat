@@ -4,7 +4,7 @@ function getBase64(file: File): Promise<string> {
     reader.readAsDataURL(file);
     reader.onload = () => {
       if (reader.result) {
-        resolve(reader.result.toString().replace("data:", ""));
+        resolve(reader.result.toString());
       }
     };
 

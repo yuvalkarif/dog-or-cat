@@ -3,14 +3,17 @@ import getBase64 from "../helpers/imgToBase64";
 import { classifyImg64 } from "../helpers/api";
 
 function Upload() {
-  const [img, setImg] = useState<File | undefined>();
-
+  const [img, setImg] = useState<string | undefined>();
+  const [response, setResponse] = useState<Response | undefined>();
+  const [loading, setLoading] = useState<boolean>(false);
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (img) {
-      getBase64(img).then((res) =>
-        classifyImg64(res).then((res) => console.log(res))
-      );
+      setLoading(true);
+      classifyImg64(img).then((res) => {
+        setLoading(false);
+        setResponse(res);
+      });
     }
   };
   const handleOnChange = (
@@ -18,17 +21,30 @@ function Upload() {
   ): void => {
     let files: FileList | null = e.currentTarget.files;
     if (files?.length) {
-      setImg(files[0]);
+      getBase64(files[0]).then((res) => setImg(res));
     }
   };
   return (
     <div>
+      {loading && <p>Loading....</p>}
+      {response && (
+        <span>
+          {response?.prediction}
+          {response?.confidence}
+        </span>
+      )}
       <form onSubmit={handleSubmit}>
         <input type="file" name="img" onChange={handleOnChange} />
         <button type="submit">SUBMIT</button>
+        {img && <img src={img} alt="preview"></img>}
       </form>
     </div>
   );
 }
 
 export default Upload;
+
+interface Response {
+  confidence: string;
+  prediction: string;
+}

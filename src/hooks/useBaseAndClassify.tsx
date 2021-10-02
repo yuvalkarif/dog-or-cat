@@ -9,8 +9,3 @@ async function useBaseAndClassify(file: File) {
   return result;
 }
 export default useBaseAndClassify;
-
-interface Response {
-  confidence: string;
-  prediction: string;
-}

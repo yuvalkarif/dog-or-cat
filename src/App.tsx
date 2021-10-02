@@ -3,7 +3,6 @@ import Upload from "./components/Upload";
 function App() {
   return (
     <div>
-      Hello WOrld
       <Upload />
     </div>
   );
