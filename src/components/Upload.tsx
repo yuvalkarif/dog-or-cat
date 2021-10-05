@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import getBase64 from "../helpers/imgToBase64";
 import { classifyImg64 } from "../helpers/api";
+import "../styles/components.scss";
 
 function Upload() {
   const [img, setImg] = useState<string | undefined>();
   const [response, setResponse] = useState<Response | undefined>();
   const [loading, setLoading] = useState<boolean>(false);
+  const file = useRef<HTMLInputElement | null>(null);
+
+  //Handlers
+
+  const handleClick = (e: React.SyntheticEvent) => {
+    file?.current?.click();
+  };
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (img) {
@@ -25,19 +33,37 @@ function Upload() {
     }
   };
   return (
-    <div>
-      {loading && <p>Loading....</p>}
-      {response && (
-        <span>
-          {response?.prediction}
-          {response?.confidence}
-        </span>
-      )}
-      <form onSubmit={handleSubmit}>
-        <input type="file" name="img" onChange={handleOnChange} />
-        <button type="submit">SUBMIT</button>
-        {img && <img src={img} alt="preview"></img>}
-      </form>
+    <div className="upload-wrapper">
+      <div className="upload-container">
+        <h2>Upload an image of a cat or a dog and let me sniff !</h2>
+        {loading && <p>Loading....</p>}
+        {response && (
+          <span>
+            {response?.prediction}
+            {response?.confidence}
+          </span>
+        )}
+        <form onSubmit={handleSubmit} className="upload-form">
+          <input
+            className="browse"
+            type="file"
+            name="img"
+            placeholder="yo"
+            ref={file}
+            onChange={handleOnChange}
+          />
+
+          {img && <img className="preview" src={img} alt="preview"></img>}
+          <div className="btns">
+            <button type="button" onClick={handleClick}>
+              Upload Photo
+            </button>
+            <button type="submit" className="submit-btn">
+              Sniff Sniff...
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

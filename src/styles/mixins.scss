@@ -1,0 +1,18 @@
+@mixin btn($bg-color: $btn-main, $main-color: $btn-text) {
+  background-color: $bg-color;
+  color: $main-color;
+  padding: 1.5em;
+  border-radius: 0.35em;
+  font-weight: 600;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin container {
+  width: 90%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-block: 7rem;
+}

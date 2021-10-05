@@ -1,8 +1,24 @@
-@import "scss-reset/_reset.scss";
-
+// @import "scss-reset/_reset.scss";
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import url("https://api.fontshare.com/css?f[]=general-sans@400,401,500,500,600,600,700,700&display=swap");
+@import "./colors.scss";
+@import "./mixins.scss";
 body {
   font-size: 16px;
-  margin: auto;
-  max-width: 880px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "General Sans", sans-serif;
+  background-color: $bg-main;
+  color: $pr-main;
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+button {
+  @include btn();
 }

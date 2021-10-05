@@ -1,0 +1,66 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+
+.main-container {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+}
+.main-wrapper {
+}
+.main-left {
+  max-width: 50%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  p {
+    margin: 1em 0;
+  }
+  h1 {
+    margin: 0;
+  }
+  button {
+    align-self: flex-start;
+  }
+}
+
+.upload-container {
+  @include container();
+}
+.upload-wrapper {
+  background-color: $btn-text;
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+.upload-form {
+  padding: 3rem;
+  border-radius: 0.35rem;
+  background-color: $bg-main;
+  display: flex;
+  flex-direction: column;
+  img {
+    margin: 2rem auto;
+    border: 0.5em solid $btn-main;
+    box-shadow: 0.5em 0.5em $pr-main;
+    border-radius: 0.25em;
+  }
+  .btns {
+    display: flex;
+    justify-content: center;
+    & > * {
+      margin: 0 0.5em;
+    }
+    & :first-child {
+      @include btn($hl-main, $btn-text);
+      // border: 3px solid $btn-text;
+    }
+  }
+  .browse {
+    display: none;
+  }
+  .preview {
+    max-width: 50%;
+  }
+}
