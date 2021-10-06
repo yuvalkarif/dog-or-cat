@@ -8,12 +8,11 @@ function Header() {
         <span role="img" aria-label="dog">
           🐶
         </span>
-        <span role="img" aria-label="cat">
-          ❓
-        </span>
+        <span>or</span>
         <span role="img" aria-label="cat">
           😺
         </span>
+        <span>o-meter</span>
       </div>
     </header>
   );

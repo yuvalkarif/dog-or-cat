@@ -8,9 +8,14 @@ body {
   font-family: "General Sans", sans-serif;
   background-color: $bg-main;
   color: $pr-main;
+  scroll-behavior: smooth;
 }
 h1 {
   font-size: 3.5rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 2.5rem;
   font-weight: 600;
 }
 p {

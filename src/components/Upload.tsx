@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, RefObject } from "react";
 import getBase64 from "../helpers/imgToBase64";
 import { classifyImg64 } from "../helpers/api";
 import "../styles/components.scss";
 
-function Upload() {
+function Upload({ elRef }: { elRef: RefObject<HTMLDivElement> }) {
   const [img, setImg] = useState<string | undefined>();
   const [response, setResponse] = useState<Response | undefined>();
   const [loading, setLoading] = useState<boolean>(false);
@@ -35,15 +35,22 @@ function Upload() {
   return (
     <div className="upload-wrapper">
       <div className="upload-container">
-        <h2>Upload an image of a cat or a dog and let me sniff !</h2>
-        {loading && <p>Loading....</p>}
-        {response && (
-          <span>
-            {response?.prediction}
-            {response?.confidence}
-          </span>
-        )}
+        <h2>Sniffing Time</h2>
+        <p>
+          Lets start by uploading an image of a cat or a dog and let me sniff !
+        </p>
+
         <form onSubmit={handleSubmit} className="upload-form">
+          <div className="results">
+            {loading && <p>Loading....</p>}
+            {response && (
+              <span>
+                This pal is <strong>{response?.confidence}</strong> a{" "}
+                <strong>{response?.prediction}</strong>
+              </span>
+            )}
+          </div>
+
           <input
             className="browse"
             type="file"
@@ -53,8 +60,12 @@ function Upload() {
             onChange={handleOnChange}
           />
 
-          {img && <img className="preview" src={img} alt="preview"></img>}
-          <div className="btns">
+          {img ? (
+            <img className="preview" src={img} alt="preview"></img>
+          ) : (
+            <div className="place-holder">?</div>
+          )}
+          <div className="btns" ref={elRef}>
             <button type="button" onClick={handleClick}>
               Upload Photo
             </button>

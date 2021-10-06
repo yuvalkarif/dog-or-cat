@@ -5,8 +5,11 @@
   border-radius: 0.35em;
   font-weight: 600;
   border: none;
+  transition: opacity 80ms ease-in-out;
+
   &:hover {
     cursor: pointer;
+    opacity: 0.75;
   }
 }
 
@@ -15,4 +18,8 @@
   max-width: 1040px;
   margin: 0 auto;
   padding-block: 7rem;
+
+  @media (max-width: 768px) {
+    padding-block: 3rem;
+  }
 }
