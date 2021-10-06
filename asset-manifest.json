@@ -1,20 +1,21 @@
 {
   "files": {
     "main.css": "/dog-or-cat/static/css/main.5d4ca17c.chunk.css",
-    "main.js": "/dog-or-cat/static/js/main.2905ebfa.chunk.js",
-    "main.js.map": "/dog-or-cat/static/js/main.2905ebfa.chunk.js.map",
+    "main.js": "/dog-or-cat/static/js/main.97f38cf5.chunk.js",
+    "main.js.map": "/dog-or-cat/static/js/main.97f38cf5.chunk.js.map",
     "runtime-main.js": "/dog-or-cat/static/js/runtime-main.03bcd0a6.js",
     "runtime-main.js.map": "/dog-or-cat/static/js/runtime-main.03bcd0a6.js.map",
     "static/js/2.2c3b7232.chunk.js": "/dog-or-cat/static/js/2.2c3b7232.chunk.js",
     "static/js/2.2c3b7232.chunk.js.map": "/dog-or-cat/static/js/2.2c3b7232.chunk.js.map",
     "index.html": "/dog-or-cat/index.html",
     "static/css/main.5d4ca17c.chunk.css.map": "/dog-or-cat/static/css/main.5d4ca17c.chunk.css.map",
-    "static/js/2.2c3b7232.chunk.js.LICENSE.txt": "/dog-or-cat/static/js/2.2c3b7232.chunk.js.LICENSE.txt"
+    "static/js/2.2c3b7232.chunk.js.LICENSE.txt": "/dog-or-cat/static/js/2.2c3b7232.chunk.js.LICENSE.txt",
+    "static/media/pet.9e55f88c.png": "/dog-or-cat/static/media/pet.9e55f88c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.03bcd0a6.js",
     "static/js/2.2c3b7232.chunk.js",
     "static/css/main.5d4ca17c.chunk.css",
-    "static/js/main.2905ebfa.chunk.js"
+    "static/js/main.97f38cf5.chunk.js"
   ]
 }
