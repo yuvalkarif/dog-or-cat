@@ -6,7 +6,7 @@
 
 <p align="center" width="100%">
   <a href="https://yuvalkarif.github.io/dog-or-cat/">
-    <img width="33%" src="https://yuvalkarif.github.io/dog-or-cat/"> 
+    <img width="33%" src="https://imgur.com/Lp7aDTE"> 
   </a>
    <br/>
   Live site : https://yuvalkarif.github.io/dog-or-cat/
